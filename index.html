@@ -187,7 +187,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-26 17:14:46 / 修改时间：17:31:26" itemprop="dateCreated datePublished" datetime="2022-01-26T17:14:46+08:00">2022-01-26</time>
+              <time title="创建时间：2022-01-26 17:14:46 / 修改时间：17:49:28" itemprop="dateCreated datePublished" datetime="2022-01-26T17:14:46+08:00">2022-01-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,40 +219,14 @@
 </li>
 <li>然后将该对象传递给视图函数，即参数request</li>
 </ul>
-<p><strong>HttpRequest类：</strong></p>
-<ul>
-<li><code>path_info:</code> URL字符串</li>
-<li><code>method:</code> 如GET、POST</li>
-<li><code>GET</code><ul>
-<li>URL: <code>/test_request?a=1&amp;b=1</code></li>
-<li>request.GET: <code>&lt;QueryDict:&#123;&#39;a&#39;:[&#39;1&#39;], &#39;b&#39;:[&#39;1&#39;]&#125;&gt;</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>响应：</strong>响应是服务器接收到请求后，做回应，发送回的数据(响应报文)</p>
-<p><strong>Django如何创建响应对象：</strong></p>
-<ul>
-<li><p><code>HttpResponse(content = 响应体, content_type, status)</code></p>
-<ul>
-<li>content_type 默认 ‘text/html’</li>
-<li>status 默认 200</li>
-</ul>
-</li>
-<li><p>HttpResponse的子类：</p>
-<ul>
-<li><p>HttpResponseRedirect</p>
-</li>
-<li><p>HttpResponseNotFound</p>
-</li>
-<li><p><strong>eg:</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">redirect_test</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(<span class="string">&#x27;/page/1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>则输入<code>127.0.0.1:8000/test_request</code>会直接跳转到<code>127.0.0.1:8000/page/1</code></p>
-</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/26/Django-2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -302,7 +276,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-26 00:05:34" itemprop="dateModified" datetime="2022-01-26T00:05:34+08:00">2022-01-26</time>
+                <time title="修改时间：2022-01-26 17:49:12" itemprop="dateModified" datetime="2022-01-26T17:49:12+08:00">2022-01-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -332,62 +306,14 @@
 <p><strong>作用：</strong>表示互联网上某个资源的地址</p>
 <p><strong>统一格式：</strong></p>
 <p><code>protocol://hostname[:port]/path[?query][#fragment]</code></p>
-<ul>
-<li>protocol - 协议</li>
-<li>hostname - 主机名</li>
-<li>path - 文件路径</li>
-<li>?query 参数</li>
-<li>#fragment 锚点，定位文章的某个位置</li>
-</ul>
-<p><strong>eg：</strong></p>
-<p><code>127.0.0.1:4000</code></p>
-<p>访问本机的4000端口</p>
-<p><code>https://www.bilibili.com/video/BV1vK4y1o7jH?p=4</code></p>
-<p>通过p=4，会定位到视频P4</p>
-<p><code>https://docs.djangoproject.com/en/4.0/#the-template-layer</code></p>
-<p>通过the-template-layer，会定位到文档中相应位置</p>
-<h2 id="Django如何处理URL请求"><a href="#Django如何处理URL请求" class="headerlink" title="Django如何处理URL请求"></a>Django如何处理URL请求</h2><ul>
-<li>由settings.py中的ROOT_URLCONF找到主路由文件</li>
-<li>加载主路由文件中的<code>urlpatterns</code></li>
-<li>依次匹配</li>
-<li>匹配成功则调用对应的视图函数</li>
-<li>匹配失败 - 返回404</li>
-</ul>
-<h2 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h2><ul>
-<li>接收浏览器的请求，然后返回响应</li>
-<li>具体的实现是，接收HttpRequest对象，返回HttpResponse对象</li>
-</ul>
-<p><strong>eg:</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page1_view</span>(<span class="params">request</span>):</span></span><br><span class="line">    html = <span class="string">&quot;这是第一个页面&quot;</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(html)</span><br></pre></td></tr></table></figure>
-
-<h2 id="path函数"><a href="#path函数" class="headerlink" title="path函数"></a>path函数</h2><ul>
-<li><code>path(route, views, name = None)</code><ul>
-<li>route : 字符串</li>
-<li>views : 视图函数</li>
-<li>name : 地址的别名</li>
-</ul>
-</li>
-</ul>
-<p><strong>path转换器：</strong></p>
-<ul>
-<li><p>语法：&lt;转换器类型：自定义名&gt;</p>
-</li>
-<li><p>作用：若转换器匹配成功，则将匹配到的数据作为参数传递给视图函数</p>
-<p><strong>eg:</strong></p>
-<p><code>path(&#39;page/&lt;int:pg&gt;&#39;, views.pagen_view)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pagen_view</span>(<span class="params">request, pg</span>):</span></span><br><span class="line">    html = <span class="string">&#x27;这是第%s个页面&#x27;</span>%(pg)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(html)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>re_path()</strong></p>
-<blockquote>
-<p>正则path</p>
-</blockquote>
-<ul>
-<li><p>语法：(?P<name>pattern)，若匹配成功，则将数据作为参数传递给视图函数</p>
-<p><strong>eg：</strong></p>
-<p><code>re_path(r&#39;^(?P&lt;x&gt;\d&#123;1,2&#125;)/(?P&lt;op&gt;\w+)/(?P&lt;y&gt;\d&#123;1,2&#125;)$&#39;, views.cal_view)</code></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/24/Django-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
