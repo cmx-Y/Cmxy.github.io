@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"cmx-y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="URL Uniform Resource Locator  定义：统一资源定位符 作用：表示互联网上某个资源的地址 统一格式： protocol:&#x2F;&#x2F;hostname[:port]&#x2F;path[?query][#fragment]">
+  <meta name="description" content="Django设计模式传统MVC​    传统的 MVC 即 Model-View-Controller  M 模型层 —— 对数据库进行封装抽象 V 视图层 —— 展示给用户的页面（WHAT + HOW） C 控制层 —— 核心逻辑控制中心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django_1">
-<meta property="og:url" content="http://cmx-y.github.io/2022/01/24/Django-1/index.html">
+<meta property="og:title" content="Django_3">
+<meta property="og:url" content="http://cmx-y.github.io/2022/02/18/Django-3/index.html">
 <meta property="og:site_name" content="cmx-Y&#39;s Blog">
-<meta property="og:description" content="URL Uniform Resource Locator  定义：统一资源定位符 作用：表示互联网上某个资源的地址 统一格式： protocol:&#x2F;&#x2F;hostname[:port]&#x2F;path[?query][#fragment]">
+<meta property="og:description" content="Django设计模式传统MVC​    传统的 MVC 即 Model-View-Controller  M 模型层 —— 对数据库进行封装抽象 V 视图层 —— 展示给用户的页面（WHAT + HOW） C 控制层 —— 核心逻辑控制中心">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-24T09:30:13.000Z">
-<meta property="article:modified_time" content="2022-01-26T09:49:12.699Z">
+<meta property="og:image" content="http://cmx-y.github.io/2022/02/18/Django-3/image-20220218222401176.png">
+<meta property="og:image" content="http://cmx-y.github.io/2022/02/18/Django-3/image-20220218222731505.png">
+<meta property="article:published_time" content="2022-02-18T14:17:42.000Z">
+<meta property="article:modified_time" content="2022-02-18T14:43:17.237Z">
 <meta property="article:author" content="CXY">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cmx-y.github.io/2022/02/18/Django-3/image-20220218222401176.png">
 
-<link rel="canonical" href="http://cmx-y.github.io/2022/01/24/Django-1/">
+<link rel="canonical" href="http://cmx-y.github.io/2022/02/18/Django-3/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>Django_1 | cmx-Y's Blog</title>
+  <title>Django_3 | cmx-Y's Blog</title>
   
 
 
@@ -165,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://cmx-y.github.io/2022/01/24/Django-1/">
+    <link itemprop="mainEntityOfPage" href="http://cmx-y.github.io/2022/02/18/Django-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -178,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Django_1
+          Django_3
         </h1>
 
         <div class="post-meta">
@@ -187,16 +190,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-01-24 17:30:13" itemprop="dateCreated datePublished" datetime="2022-01-24T17:30:13+08:00">2022-01-24</time>
+              <time title="创建时间：2022-02-18 22:17:42 / 修改时间：22:43:17" itemprop="dateCreated datePublished" datetime="2022-02-18T22:17:42+08:00">2022-02-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-26 17:49:12" itemprop="dateModified" datetime="2022-01-26T17:49:12+08:00">2022-01-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -218,70 +215,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><blockquote>
-<p>Uniform Resource Locator</p>
-</blockquote>
-<p><strong>定义：</strong>统一资源定位符</p>
-<p><strong>作用：</strong>表示互联网上某个资源的地址</p>
-<p><strong>统一格式：</strong></p>
-<p><code>protocol://hostname[:port]/path[?query][#fragment]</code></p>
+        <h2 id="Django设计模式"><a href="#Django设计模式" class="headerlink" title="Django设计模式"></a>Django设计模式</h2><h4 id="传统MVC"><a href="#传统MVC" class="headerlink" title="传统MVC"></a>传统MVC</h4><p>​    传统的 MVC 即 Model-View-Controller</p>
+<ul>
+<li>M 模型层 —— 对数据库进行封装抽象</li>
+<li>V 视图层 —— 展示给用户的页面（WHAT + HOW）</li>
+<li>C 控制层 —— 核心逻辑控制中心</li>
+</ul>
 <span id="more"></span>
 
-<ul>
-<li>protocol - 协议</li>
-<li>hostname - 主机名</li>
-<li>path - 文件路径</li>
-<li>?query 参数</li>
-<li>#fragment 锚点，定位文章的某个位置</li>
-</ul>
-<p><strong>eg：</strong></p>
-<p><code>127.0.0.1:4000</code></p>
-<p>访问本机的4000端口</p>
-<p><code>https://www.bilibili.com/video/BV1vK4y1o7jH?p=4</code></p>
-<p>通过p=4，会定位到视频P4</p>
-<p><code>https://docs.djangoproject.com/en/4.0/#the-template-layer</code></p>
-<p>通过the-template-layer，会定位到文档中相应位置</p>
-<h2 id="Django如何处理URL请求"><a href="#Django如何处理URL请求" class="headerlink" title="Django如何处理URL请求"></a>Django如何处理URL请求</h2><ul>
-<li>由settings.py中的ROOT_URLCONF找到主路由文件</li>
-<li>加载主路由文件中的<code>urlpatterns</code></li>
-<li>依次匹配</li>
-<li>匹配成功则调用对应的视图函数</li>
-<li>匹配失败 - 返回404</li>
-</ul>
-<h2 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h2><ul>
-<li>接收浏览器的请求，然后返回响应</li>
-<li>具体的实现是，接收HttpRequest对象，返回HttpResponse对象</li>
-</ul>
-<p><strong>eg:</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page1_view</span>(<span class="params">request</span>):</span></span><br><span class="line">    html = <span class="string">&quot;这是第一个页面&quot;</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(html)</span><br></pre></td></tr></table></figure>
+<img src="/2022/02/18/Django-3/image-20220218222401176.png" alt="image-20220218222401176" style="zoom:80%;">
 
-<h2 id="path函数"><a href="#path函数" class="headerlink" title="path函数"></a>path函数</h2><ul>
-<li><code>path(route, views, name = None)</code><ul>
-<li>route : 字符串</li>
-<li>views : 视图函数</li>
-<li>name : 地址的别名</li>
-</ul>
-</li>
-</ul>
-<p><strong>path转换器：</strong></p>
+<h4 id="Django的MTV"><a href="#Django的MTV" class="headerlink" title="Django的MTV"></a>Django的MTV</h4><p>​    即 Model - Template - View</p>
 <ul>
-<li><p>语法：&lt;转换器类型：自定义名&gt;</p>
-</li>
-<li><p>作用：若转换器匹配成功，则将匹配到的数据作为参数传递给视图函数</p>
-<p><strong>eg:</strong></p>
-<p><code>path(&#39;page/&lt;int:pg&gt;&#39;, views.pagen_view)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pagen_view</span>(<span class="params">request, pg</span>):</span></span><br><span class="line">    html = <span class="string">&#x27;这是第%s个页面&#x27;</span>%(pg)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(html)</span><br></pre></td></tr></table></figure></li>
+<li>M 模型层 —— 对数据库进行封装抽象</li>
+<li>T 模板层 —— 待填空的html页面，包含css样式（HOW）</li>
+<li>V 视图层 —— 可以简单理解为视图函数（WHAT）</li>
 </ul>
-<p><strong>re_path()</strong></p>
+<img src="/2022/02/18/Django-3/image-20220218222731505.png" alt="image-20220218222731505" style="zoom:80%;">
+
+<h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><p>​    <strong>首先，</strong>在项目文件夹下新建templates文件夹</p>
+<p>​    <strong>然后，</strong>就可以在视图函数中加载模板</p>
+<h4 id="模板使用方法"><a href="#模板使用方法" class="headerlink" title="模板使用方法"></a>模板使用方法</h4><p>在视图函数中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line">	<span class="keyword">return</span> render(request, <span class="string">&#x27;模板文件名&#x27;</span>, 字典数据)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>正则path</p>
+<p>用 locals() 可以直接将所有局部变量封装成一个字典</p>
 </blockquote>
-<ul>
-<li><p>语法：(?P<name>pattern)，若匹配成功，则将数据作为参数传递给视图函数</name></p>
-<p><strong>eg：</strong></p>
-<p><code>re_path(r&#39;^(?P&lt;x&gt;\d&#123;1,2&#125;)/(?P&lt;op&gt;\w+)/(?P&lt;y&gt;\d&#123;1,2&#125;)$&#39;, views.cal_view)</code></p>
-</li>
-</ul>
+<p><strong>Python字典：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;</span><br><span class="line">    <span class="string">&quot;变量1&quot;</span>:<span class="string">&quot;值1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;变量2&quot;</span>:<span class="string">&quot;值2&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;&#125;</span><br><span class="line">dic[<span class="string">&#x27;int&#x27;</span>] = <span class="number">88</span></span><br><span class="line">   dic[<span class="string">&#x27;str&#x27;</span>] = <span class="string">&#x27;guoxiaonao&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="模板示例"><a href="#模板示例" class="headerlink" title="模板示例"></a>模板示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span> &#123;&#123; username &#125;&#125; 是模板层的~~~~ <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    </p>
 
     </div>
 
@@ -297,13 +267,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/22/linux%E6%BA%90%E7%A0%81%E2%85%A0/" rel="prev" title="linux源码Ⅰ">
-      <i class="fa fa-chevron-left"></i> linux源码Ⅰ
+    <a href="/2022/02/12/%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="prev" title="不同的二叉搜索树">
+      <i class="fa fa-chevron-left"></i> 不同的二叉搜索树
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/26/Django-2/" rel="next" title="Django_2">
-      Django_2 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -362,7 +329,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Django%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86URL%E8%AF%B7%E6%B1%82"><span class="nav-number">2.</span> <span class="nav-text">Django如何处理URL请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">视图函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">path函数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Django设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9FMVC"><span class="nav-number">1.0.1.</span> <span class="nav-text">传统MVC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Django%E7%9A%84MTV"><span class="nav-number">1.0.2.</span> <span class="nav-text">Django的MTV</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Template"><span class="nav-number">2.</span> <span class="nav-text">Template</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.0.1.</span> <span class="nav-text">模板使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.0.2.</span> <span class="nav-text">模板示例</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
