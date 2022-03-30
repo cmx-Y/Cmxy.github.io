@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"cmx-y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Introduction​        Game playing was thought to be a good  problem for AI research. Minimax algorithm前提假设：两个玩家均采取最优策略，即  MAX 优先选择有极大值的状态 MIN 优先选择有极小值的状态  计算MINIMAX值：    由计算公式可以知道，计算MINMAX值是一个深度优先然后倒推">
+  <meta name="description" content="Introduction​        Game playing was thought to be a good  problem for AI research. Minimax algorithm前提假设：两个玩家均采取最优策略，即  MAX 优先选择有极大值的状态 MIN 优先选择有极小值的状态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Game playing">
 <meta property="og:url" content="http://cmx-y.github.io/2022/03/28/Game-playing/index.html">
 <meta property="og:site_name" content="cmx-Y&#39;s Blog">
-<meta property="og:description" content="Introduction​        Game playing was thought to be a good  problem for AI research. Minimax algorithm前提假设：两个玩家均采取最优策略，即  MAX 优先选择有极大值的状态 MIN 优先选择有极小值的状态  计算MINIMAX值：    由计算公式可以知道，计算MINMAX值是一个深度优先然后倒推">
+<meta property="og:description" content="Introduction​        Game playing was thought to be a good  problem for AI research. Minimax algorithm前提假设：两个玩家均采取最优策略，即  MAX 优先选择有极大值的状态 MIN 优先选择有极小值的状态">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cmx-y.github.io/2022/03/28/Game-playing/image-20220328105441274.png">
 <meta property="og:image" content="http://cmx-y.github.io/2022/03/28/Game-playing/image-20220328110110700.png">
 <meta property="article:published_time" content="2022-03-28T02:09:22.000Z">
-<meta property="article:modified_time" content="2022-03-28T03:13:56.040Z">
+<meta property="article:modified_time" content="2022-03-30T03:07:01.114Z">
 <meta property="article:author" content="CXY">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://cmx-y.github.io/2022/03/28/Game-playing/image-20220328105441274.png">
@@ -190,10 +190,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-28 10:09:22 / 修改时间：11:13:56" itemprop="dateCreated datePublished" datetime="2022-03-28T10:09:22+08:00">2022-03-28</time>
+              <time title="创建时间：2022-03-28 10:09:22" itemprop="dateCreated datePublished" datetime="2022-03-28T10:09:22+08:00">2022-03-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-30 11:07:01" itemprop="dateModified" datetime="2022-03-30T11:07:01+08:00">2022-03-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -221,6 +227,10 @@
 <li>MAX 优先选择有极大值的状态</li>
 <li>MIN 优先选择有极小值的状态</li>
 </ul>
+<span id="more"></span>
+
+
+
 <p><strong>计算MINIMAX值：</strong></p>
 <img src="/2022/03/28/Game-playing/image-20220328105441274.png" alt="image-20220328105441274" style="zoom:80%;">
 
@@ -258,7 +268,10 @@
     <a href="/2022/03/19/LRU/" rel="prev" title="LRU">
       <i class="fa fa-chevron-left"></i> LRU
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/29/Cache%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF/" rel="next" title="Cache优化技术">
+      Cache优化技术 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -333,14 +346,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
